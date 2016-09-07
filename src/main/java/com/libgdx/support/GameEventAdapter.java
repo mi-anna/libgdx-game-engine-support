@@ -14,7 +14,7 @@ public class GameEventAdapter<T extends GameEngine> implements GameEvent {
 	
 	@SuppressWarnings("unchecked")
 	protected T getGameEngine() {
-		return (T) GameEngineManager.getGameEngine();
+		return (T) GameEngineManager.getInstance().getGameEngine();
 	}
 
 	@Override

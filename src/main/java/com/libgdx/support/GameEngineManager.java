@@ -14,21 +14,28 @@ public class GameEngineManager {
 
 	private GameEngineManager() {
 	}
+	
+	public static GameEngineManager getInstance(){
+		if(gem == null){
+			gem = new GameEngineManager();
+		}
+		return gem;
+	}
 
 	private GameEngine gameEngine;
 
-	protected static void setGameEngine(GameEngine gameEngine) {
-		gem.gameEngine = gameEngine;
+	protected void setGameEngine(GameEngine gameEngine) {
+		this.gameEngine = gameEngine;
 	}
 
-	protected static GameEngine getGameEngine() {
-		return gem.gameEngine;
+	protected GameEngine getGameEngine() {
+		return gameEngine;
 	}
 
-	protected static void destroy() {
+	protected void destroy() {
 		if (gem != null) {
-			if (gem.gameEngine != null) {
-				gem.gameEngine = null;
+			if (gameEngine != null) {
+				gameEngine = null;
 			}
 			gem = null;
 		}

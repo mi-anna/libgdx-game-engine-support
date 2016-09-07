@@ -28,13 +28,13 @@ public abstract class GameEngine extends Game {
 		} else {
 			this.event = event;
 		}
-		GameEngineManager.setGameEngine(this);
+		GameEngineManager.getInstance().setGameEngine(this);
 	}
 
 	@Override
 	public void dispose() {
 		super.dispose();
-		GameEngineManager.destroy();
+		GameEngineManager.getInstance().destroy();
 	}
 
 	public GameEvent getEvent() {
